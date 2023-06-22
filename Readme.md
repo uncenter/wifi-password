@@ -1,47 +1,22 @@
-
 # wifi-password
 
-People ask you for the Wi-Fi password. Answer quickly. **macOS only**.
-[Windows version](https://github.com/RReverser/WiFi-Password).
+People ask you for the Wi-Fi password. Answer quickly.
 
-![](https://i.cloudup.com/uUo8iSbKXRh/km6iJT.gif)
+## Usage
 
-## How to use
+**1. Installation:**
 
-**1. Install it**
-
-With [bpkg](https://github.com/bpkg/bpkg):
+With [antidote](https://github.com/mattmc3/antidote):
 
 ```
-$ bpkg install rauchg/wifi-password
+antidote install uncenter/wifi-password
 ```
 
-With [Homebrew](https://github.com/Homebrew/homebrew):
-
-```
-$ brew install wifi-password
-```
-
-With [Antigen](https://github.com/zsh-users/antigen):
-
-Add `antigen bundle rauchg/wifi-password` to your `.zshrc` with your other antigen commands
-
-With [Zgen](https://github.com/tarjoilija/zgen)
-
-Add `zgen load rauchg/wifi-password` to your `.zshrc` with your other zgen commands
-
-or with `curl`:
-
-```
-curl -L https://raw.github.com/rauchg/wifi-password/master/wifi-password.sh -o ~/bin/wifi-password && chmod +x ~/bin/wifi-password
-```
-
-If you don't have `~/bin` in your `$PATH`, replace it with `/usr/local/bin` or
-similar.
+That's it. Use antidote. It's awesome.
 
 **2. Use it:**
 
-To get the password for the WiFi you're currently logged onto:
+To get the password for the current WiFi network:
 
 ```
 $ wifi-password
@@ -51,12 +26,6 @@ To get it for a specific SSID:
 
 ```
 $ wifi-password <ssid>
-```
-
-To put it straight in your clipboard for pasting elsewhere (OS X only):
-
-```
-$ wifi-password | pbcopy
 ```
 
 ## License
