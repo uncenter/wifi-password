@@ -91,5 +91,5 @@ fi
 if [ $verbose ]; then
     echo "Password for \"$ssid\": \"$pwd\""
 else
-    echo $pwd
+    echo "$pwd"
 fi
