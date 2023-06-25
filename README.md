@@ -7,7 +7,7 @@ Get the password of the current or specified WiFi network.
 ## Installation
 
 ```
-curl -sSL https://github.com/uncenter/wifi-password/raw/master/install.sh | bash
+bash -c "$(curl -fsSL https://github.com/uncenter/wifi-password/raw/master/install.sh)"
 ```
 
 ## Usage
