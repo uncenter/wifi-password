@@ -26,7 +26,7 @@ Options:
 	-V, --version    Output version.
 	-h, --help       This message.
 
-Example:
+Examples:
 	wifi-password
 	wifi-password | pbcopy
 	wifi-password MyWiFiNetwork
@@ -89,7 +89,7 @@ if [ "" == "$pwd" ]; then
 fi
 
 if [ $verbose ]; then
-    echo "Password for \"$ssid\": \"$pwd\""
+    echo "\"$pwd\""
 else
     echo "$pwd"
 fi
