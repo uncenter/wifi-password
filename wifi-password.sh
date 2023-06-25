@@ -27,9 +27,19 @@ Options:
 	-h, --help       This message.
 
 Examples:
-	wifi-password
-	wifi-password | pbcopy
-	wifi-password MyWiFiNetwork
+
+    Get password for current network:
+        $ wifi-password
+
+    Get password for a specific network:
+        $ wifi-password MyWiFiNetwork
+
+    Only output the password:
+        $ wifi-password --quiet
+        $ wifi-password -q
+
+    Copy password to clipboard:
+        $ wifi-password -q | pbcopy
 EOF
 }
 
