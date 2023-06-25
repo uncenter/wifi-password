@@ -1,6 +1,6 @@
 #!/usr/bin/env sh
 
-version="1.0.0"
+version="1.1.0"
 
 airport="/System/Library/PrivateFrameworks/Apple80211.framework/Versions/Current/Resources/airport"
 if [ ! -f $airport ]; then
