@@ -2,7 +2,7 @@
 
 > People ask you for the Wi-Fi password. Answer quickly.
 
-Get the password of the current or specified WiFi network.
+Get the password of the current or specified WiFi network (macOS only).
 
 ## Installation
 
