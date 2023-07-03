@@ -11,10 +11,10 @@ if [ -f "/usr/local/bin/wifi-password" ]; then
     echo
     if [[ $REPLY =~ ^[Rr]$ ]]; then
         sudo rm /usr/local/bin/wifi-password
-        echo "wifi-password uninstalled."
+        echo "Uninstalled wifi-password."
     elif [[ $REPLY =~ ^[Uu]$ ]]; then
         sudo rm /usr/local/bin/wifi-password
-        echo "wifi-password uninstalled."
+        echo "Uninstalled wifi-password."
         exit 0
     else
         exit 0
@@ -28,7 +28,7 @@ if [ -f "./wifi-password.sh" ]; then
 fi
 
 curl --silent --show-error --output wifi-password.sh https://raw.githubusercontent.com/uncenter/wifi-password/master/wifi-password.sh
+echo "Installing wifi-password in /usr/local/bin. You may be asked for your password."
 
 chmod +x wifi-password.sh
-
-sudo mv wifi-password.sh /usr/local/bin/wifi-password && echo "wifi-password installed. Run \`wifi-password --help\` for usage. " || echo "Installation failed."
+sudo mv wifi-password.sh /usr/local/bin/wifi-password && echo "Installed wifi-password. Run \`wifi-password --help\` for usage. " || echo "Installation failed."
