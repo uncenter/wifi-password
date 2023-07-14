@@ -1,6 +1,6 @@
 #!/usr/bin/env sh
 
-version="1.1.0"
+version="1.1.1"
 
 airport="/System/Library/PrivateFrameworks/Apple80211.framework/Versions/Current/Resources/airport"
 if [ ! -f $airport ]; then
@@ -79,7 +79,7 @@ fi
 # Warn user about keychain dialog.
 if [ $verbose ]; then
     echo "Getting password for \"$ssid\"..."
-    echo "Keychain prompt incoming."
+    echo "Keychain prompt incoming!"
     sleep 1
 fi
 
@@ -87,7 +87,7 @@ fi
 pwd="`security find-generic-password -D 'AirPort network password' -ga \"$ssid\" 2>&1 >/dev/null`"
 
 if [[ $pwd =~ "could" ]]; then
-    echo "ERROR: Could not find SSID \"$ssid\"" >&2
+    echo "ERROR: Could not find SSID \"$ssid\". There may be no password set." >&2
     exit 1
 fi
 
