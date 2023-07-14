@@ -6,17 +6,15 @@ Get the password of the current or specified WiFi network (macOS only).
 
 ## Installation
 
-```
-bash -c "$(curl -fsSL https://github.com/uncenter/wifi-password/raw/master/install.sh)"
+```sh
+curl -fsSL https://github.com/uncenter/wifi-password/raw/master/install.sh | sh
 ```
 
-<details>
-<summary>Manual installation</summary>
-<ol>
-<li>Download <a href="https://raw.githubusercontent.com/uncenter/wifi-password/master/wifi-password.sh"><code>wifi-password.sh</code></a> and move it to <code>/usr/local/bin/wifi-password</code> (you may need <code>sudo</code>).</li>
-<li>Make `wifi-password` executable (e.g. <code>chmod +x /usr/local/bin/wifi-password</code>).</li>
-</ol>
-</details>
+Installs to `/usr/local/bin` (all users) by default. You can specify a custom directory by appending `-s <dir>` to the install command. For example, to install to `$HOME/.local/bin`:
+
+```sh
+curl -fsSL https://github.com/uncenter/wifi-password/raw/master/install.sh | sh -s "$HOME/.local/bin"
+```
 
 ## Usage
 

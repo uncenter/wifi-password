@@ -1,34 +1,18 @@
 #!/usr/bin/env bash
+set -eo pipefail
+
+install_dir="${1:-/usr/local/bin}"
+script_url="https://raw.githubusercontent.com/uncenter/wifi-password/master/wifi-password.sh"
 
 if [[ $(uname -s) != "Darwin" ]]; then
     echo "This installation script is intended for macOS only."
     exit 1
 fi
 
-if [ -f "/usr/local/bin/wifi-password" ]; then
-    echo "wifi-password is already installed."
-    read -r -n 1 -p "Do you want to [r]einstall, [u]ninstall, or [a]bort? " REPLY
-    echo
-    if [[ $REPLY =~ ^[Rr]$ ]]; then
-        sudo rm /usr/local/bin/wifi-password
-        echo "Uninstalled wifi-password."
-    elif [[ $REPLY =~ ^[Uu]$ ]]; then
-        sudo rm /usr/local/bin/wifi-password
-        echo "Uninstalled wifi-password."
-        exit 0
-    else
-        exit 0
-    fi
-fi
+[ -f "$install_dir/wifi-password" ] && echo "wifi-password is already installed." && exit 1
 
-if [ -f "./wifi-password.sh" ]; then
-    echo "A file named wifi-password.sh already exists in the current directory."
-    echo "Please remove or rename it before installing."
-    exit 1
-fi
-
-curl --silent --show-error --output wifi-password.sh https://raw.githubusercontent.com/uncenter/wifi-password/master/wifi-password.sh
-echo "Installing wifi-password in /usr/local/bin. You may be asked for your password."
-
-chmod +x wifi-password.sh
-sudo mv wifi-password.sh /usr/local/bin/wifi-password && echo "Installed wifi-password. Run \`wifi-password --help\` for usage. " || echo "Installation failed."
+file="wifi-password-$(date +%s%N).sh"
+curl -sS -o "$file" "$script_url"
+echo "Installing wifi-password in $install_dir. You may be asked for your password."
+chmod +x "$file"
+sudo mv "$file" "$install_dir/wifi-password" && echo "Installed! Run \`wifi-password --help\` for usage. " || echo "Installation failed."
